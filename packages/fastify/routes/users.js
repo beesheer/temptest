@@ -15,8 +15,7 @@ const user = async function(req, res, next) {
     return next(e);
   }
   
-  res.send(user);
-  return next();
+  return user;
 }
 
 module.exports = user;
