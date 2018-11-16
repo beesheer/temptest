@@ -36,6 +36,7 @@ Transfer/sec:    645.65KB
 ```
 
 ## Zend (current PHP API Box)
+```
 $ docker run --rm williamyeh/wrk -c20 -d30 -t12 https://192.168.56.101/v1/benchmark
 Running 30s test @ https://192.168.56.101/v1/benchmark
   12 threads and 20 connections
@@ -46,3 +47,4 @@ Running 30s test @ https://192.168.56.101/v1/benchmark
   Socket errors: connect 0, read 0, write 0, timeout 63
 Requests/sec:      2.09
 Transfer/sec:      1.12KB
+```
