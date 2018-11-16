@@ -1,0 +1,14 @@
+{
+  "name": "node-benchmark",
+  "version": "1.0.0",
+  "description": "Compare express.js, restify, fastify",
+  "main": "index.js",
+  "repository": "https://github.com/beesheer/node-benchmark.git",
+  "author": "Bin Xu <beesheer@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express-generator": "^4.16.0",
+    "fastify": "^1.13.0",
+    "redis": "^2.8.0"
+  }
+}
