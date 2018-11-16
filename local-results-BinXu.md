@@ -1,3 +1,7 @@
+## Summary
+- Node.js based frameworks have approximately the same performance. Fastify has a slight advantage.
+- All node.js based frameworks are about 1000 times faster than the current php api box.
+
 ## Express
 ```
 $ docker run --rm williamyeh/wrk -c20 -d30 -t12 http://192.168.56.101:3000/users
