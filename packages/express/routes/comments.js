@@ -31,7 +31,7 @@ router.get('/promise', async (req, res, next) => {
     );
 
     rows.concat(results.rows);
-
+    console.log(results.rows);
     console.log(results.pageState);
 
     if (results.pageState === null) {
