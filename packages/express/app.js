@@ -6,8 +6,8 @@ var usersRouter = require('./routes/users');
 var commentsRouter = require('./routes/comments');
 
 var app = express();
-var passport = require('passport');
-app.use(passport.initialize());
+//var passport = require('passport');
+//app.use(passport.initialize());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

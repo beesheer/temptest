@@ -1,4 +1,5 @@
 const passport = require('passport');
+const TokenStrategy = require('passport-http-oauth').TokenStrategy;
 const user = require('./models/user');
 
 passport.use('token', new TokenStrategy(
