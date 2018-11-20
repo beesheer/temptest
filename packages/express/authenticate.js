@@ -18,7 +18,7 @@ passport.use('token', new TokenStrategy(
     }
     console.log(tokenRow);
 
-    return done(null, tokenRow, token.secret);
+    return done(null, tokenRow, tokenRow.secret);
   },
   function(timestamp, nonce, done) {
     // validate the timestamp and nonce as necessary
