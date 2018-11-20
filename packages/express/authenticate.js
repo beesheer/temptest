@@ -21,9 +21,10 @@ passport.use('token', new TokenStrategy(
     return done(null, tokenRow, tokenRow.secret, { scope: '*' });
   },
   function(timestamp, nonce, done) {
+    console.log('here');
     // validate the timestamp and nonce as necessary
     done(null, true)
   }
 ));
 
-exports.verifyAccessToken = passport.authenticate('token', {session: false}, (err) => console.log(err));
+exports.verifyAccessToken = passport.authenticate('token', {session: false});
