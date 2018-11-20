@@ -2,11 +2,7 @@ var express = require('express');
 var router = express.Router();
 const cassandra = require('cassandra-driver');
 const config = require('../../config.json');
-try {
-  const client = new cassandra.Client({ contactPoints: [config.scylla.host + ':' + config.scylla.port], keyspace: 'am_artists_test'});
-} catch (err) {
-
-}
+const client = new cassandra.Client({ contactPoints: [config.scylla.host + ':' + config.scylla.port], keyspace: 'am_artists_test'});
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
