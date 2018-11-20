@@ -26,4 +26,4 @@ passport.use('token', new TokenStrategy(
   }
 ));
 
-exports.verifyAccessToken = passport.authenticate('token', {session: false});
+exports.verifyAccessToken = passport.authenticate('token', {session: false}, (err) => console.log(err));
