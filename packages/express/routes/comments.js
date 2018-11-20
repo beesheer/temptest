@@ -34,13 +34,14 @@ router.get('/promise', async (req, res, next) => {
 
     console.log(results.pageState);
 
-    if (results.pageState === 'null') {
+    if (results.pageState === null) {
       finished = true;
     } else {
       pageState = results.pageState;
     }
   }
-  
+
+  res.json(rows);
 });
 
 module.exports = router;
