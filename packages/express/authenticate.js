@@ -16,6 +16,8 @@ passport.use('token', new TokenStrategy(
     if (tokenRow ===  false) {
       return done(null, false);
     }
+    console.log(tokenRow);
+    
     return done(null, tokenRow, token.secret);
   },
   function(timestamp, nonce, done) {
