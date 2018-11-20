@@ -20,8 +20,9 @@ router.get('/promise', async (req, res, next) => {
   const query = 'SELECT * from threads';
 
   let pageState = null;
+  let finished = false;
 
-  while(true) {
+  while(!finished) {
     const results = await client.execute(query, [], { pageState: pageState, fetchSize: 1}).catch(
       (err) => {
         console.log(err);
@@ -34,7 +35,7 @@ router.get('/promise', async (req, res, next) => {
     console.log(results.pageState);
 
     if (results.pageState === null) {
-      break;
+      finished = true;
     } else {
       pageState = results.pageState;
     }
