@@ -9,8 +9,8 @@ router.get('/', async (req, res, next) => {
   let results = [];
   const query = 'SELECT * from threads';
   await client.eachRow(query, [], { autoPage: true, fetchSize: 1}, (n, row) => {
-    console.log(n);
-    console.log(row);
+    //console.log(n);
+    //console.log(row);
     results.push(row);
   }, () => res.json(results));
 });
@@ -31,8 +31,8 @@ router.get('/promise', async (req, res, next) => {
     );
 
     rows = rows.concat(results.rows);
-    console.log(results.rows);
-    console.log(results.pageState);
+    //console.log(results.rows);
+    //console.log(results.pageState);
 
     if (results.pageState === null) {
       finished = true;
