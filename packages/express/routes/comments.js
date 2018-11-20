@@ -15,6 +15,8 @@ router.get('/', async (req, res, next) => {
   }, () => res.json(results));
 });
 
+/* Get using promise */
+// From the testings, the 2 methods are equally performant
 router.get('/promise', async (req, res, next) => {
   let rows = [];
   const query = 'SELECT * from threads';
@@ -42,6 +44,11 @@ router.get('/promise', async (req, res, next) => {
   }
 
   res.json(rows);
+});
+
+var authenticate = require('../authenticate');
+router.post('/', authenticate.verifyAccessToken, async (req, res, next) => {
+  res.send('Passed!');
 });
 
 module.exports = router;
