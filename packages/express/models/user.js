@@ -6,7 +6,7 @@ var redis = require('redis')
 var redisClient = redis.createClient(config.redis);
 
 const {promisify} = require('util');
-const hgetallAsync = promisify(client.hgetall).bind(client);
+const hgetallAsync = promisify(redisClient.hgetall).bind(redisClient);
 
 exports.getConsumer = async (consumer) => {
   return await hgetallAsync(`apikey:${consumer}`);
