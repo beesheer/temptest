@@ -12,7 +12,7 @@ router.get('/', async function(req, res, next) {
     console.log(n);
     console.log(row);
     results.push(row);
-  });
+  }, (req, res, next) => res.json(results));
 
   /*const results = await client.execute(query).catch(
     (err) => {
@@ -20,8 +20,6 @@ router.get('/', async function(req, res, next) {
       next(err);
     }
   );*/
-
-  res.json(results);
 });
 
 module.exports = router;
