@@ -3,9 +3,6 @@ const TokenStrategy = require('passport-http-oauth').TokenStrategy;
 const user = require('./models/user');
 
 passport.use('token', new TokenStrategy(
-  {
-    host: '192.168.56.101:3000'
-  },
   async function(consumerKey, done) {
     const consumer = await user.getConsumer(consumerKey);
     if (consumer === null) {
