@@ -9,10 +9,10 @@ var app = express();
 //var passport = require('passport');
 //app.use(passport.initialize());
 
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
   req.root = 'https://audiomack.test/'; //overwrite to make oauth work
   next();
-});
+});*/
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
