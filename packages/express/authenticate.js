@@ -4,7 +4,7 @@ const user = require('./models/user');
 
 passport.use('token', new TokenStrategy(
   {
-    host: 'audiomack.test'
+    host: '192.168.56.101:3000'
   },
   async function(consumerKey, done) {
     const consumer = await user.getConsumer(consumerKey);

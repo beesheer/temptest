@@ -9,13 +9,13 @@ var app = express();
 //var passport = require('passport');
 //app.use(passport.initialize());
 
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
   req.headers = {
     ...req.headers,
     "x-forwarded-proto": 'https'
   }
   next();
-});
+});*/
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
